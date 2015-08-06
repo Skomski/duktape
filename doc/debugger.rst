@@ -695,8 +695,9 @@ some cases:
 | 0x1d <uint16> <uint8> | lightfunc | Lightfunc flags, pointer length,      |
 | <data>                |           | pointer data (network endian)         |
 +-----------------------+-----------+---------------------------------------+
-| 0x1e <uint8> <data>   | heapptr   | Pointer to a heap object (used by     |
-|                       |           | DumpHeap, network endian)             |
+| 0x1e <uint8> <data>   | heapptr   | Pointer length, pointer data (network |
+|                       |           | endian); pointer to heap object used  |
+|                       |           | by DumpHeap                           |
 +-----------------------+-----------+---------------------------------------+
 | 0x1f                  | reserved  |                                       |
 +-----------------------+-----------+---------------------------------------+
