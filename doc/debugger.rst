@@ -118,6 +118,22 @@ The example debugger stuff includes:
 **While TCP is a good example transport, it is not a "standard" transport:
 the transport is always ultimately up to the user code.**
 
+Example local debugger
+----------------------
+
+While a remote debug client is usually preferable, in some cases it may be
+useful to terminate the debug connection in the same process as where Duktape
+is running.  From Duktape perspective a "local" debugger is just like a remote
+one: a debug transport implementation hides the difference from Duktape.
+There's an example debug transport with a local dvalue encoder/decoder:
+
+* ``examples/debug-trans-dvalue/``
+
+The example transport hides the details of encoding and decoding dvalues, and
+makes it easier to write a local debug client.  The transport also serves as
+an example for dealing with dvalues in C (the Node.js debugger has a similar
+example for Javascript).
+
 What Duktape doesn't provide
 ----------------------------
 
